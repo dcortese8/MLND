@@ -13170,21 +13170,27 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <li><strong>Real World</strong>: Naive Bayes is commonly used for detecting spam in email, text messages, etc. It is also used for classifying documents such as newspapers or magazines.</li>
 <li><strong>Strengths</strong>: Performs well when inputs are independent; able to hold many features, hard to overfit due to few parameters, fast and easy to use.</li>
 <li><strong>Weaknesses</strong>: "Naive" - Very strong assumption about the shape of the data. Assumes features are independent of each other. Inability to use continuous features could create loss of information.</li>
-<li><strong>Application</strong>: Since we have 103 features after one-hot encoding and Naive Bayes is easy to implement, this model could be a good candidate for the data.</li>
+<li><p><strong>Application</strong>: Since we have 103 features after one-hot encoding and Naive Bayes is easy to implement, this model could be a good candidate for the data.</p>
+<p><strong>Reference</strong>: <a href="https://machinelearningmastery.com/naive-bayes-for-machine-learning/">https://machinelearningmastery.com/naive-bayes-for-machine-learning/</a></p>
+</li>
 </ul>
 <p><strong>Ensemble Methods</strong></p>
 <ul>
 <li><strong>Real World</strong>: Seems to be used a lot with location based problems. Also commonly used in Kaggle competitions.</li>
 <li><strong>Strengths</strong>: Performs well on imbalanced datasets. Combines multiple learners. Boosting focuses on misclassified training points and recalculates the weights for them only.</li>
 <li><strong>Weaknesses</strong>: Easy to choose wrong ensemble method. Prone to overfitting, not robust on outliers.</li>
-<li><strong>Application</strong>: Large dataset that seems to be imbalanced. Gradient boosting is a very common method, so this seems like a good candidate.</li>
+<li><p><strong>Application</strong>: Large dataset that seems to be imbalanced. Gradient boosting is a very common method, so this seems like a good candidate.</p>
+<p><strong>Reference</strong>: <a href="https://www.quora.com/What-are-the-advantages-disadvantages-of-using-Gradient-Boosting-over-Random-Forests">https://www.quora.com/What-are-the-advantages-disadvantages-of-using-Gradient-Boosting-over-Random-Forests</a></p>
+</li>
 </ul>
 <p><strong>Support Vector Machines (SVM)</strong></p>
 <ul>
 <li><strong>Real World</strong>: SVM's have been used in image classification, facial recognition, bioinformatics, hand writing recognition and more. They are also very powerful in time series forecasting and stock market predictions.</li>
 <li><strong>Strengths</strong>: Performs well when there is an obvious distinction between classes and works very fast. Kernel Trick.</li>
 <li><strong>Weaknesses</strong>: Struggles when no obvious distinction between classes or when classification is not binary. Sensitive to overfitting, optimization must work hard to determine best parameters.</li>
-<li><strong>Application</strong>: Classification is binary which makes SVM a strong candidate.</li>
+<li><p><strong>Application</strong>: Classification is binary which makes SVM a strong candidate.</p>
+<p><strong>Reference</strong>: <a href="http://www.svms.org/disadvantages.html">http://www.svms.org/disadvantages.html</a></p>
+</li>
 </ul>
 
 </div>
@@ -14176,7 +14182,7 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> Gradient Boosting is a tree model, and tree models are structured like a game of 20 questions, such that we ask questions to limit the possibilities of the thing someone is thinking about. They are yes or no questions, and the best and most efficient way to get the answer is to ask the questions in the right order. For example, if someone is thinking of a rock, a bad first question would be "Is it a dog?", because if it is not then there are still so many possibilities to choose from. Asking "Is it a living thing?" would be better since it would limit the number of possibilities.</p>
-<p>A GB tree works similarly. The algorithm is given features and determines the optimal order in which to ask questions about the features. The algorithm repeatedly looks for the weakest predictors and boosts them to increase their importance by combining them with other weak predictors. In this case, each donor is passed through the optimal tree and given a classification of donor or not donor. Most of the time, the tree gives the correct classification.</p>
+<p>A GB tree works similarly. The algorithm is given features and determines the optimal order in which to ask questions about the features. A weak learner is one who's performance is slightly better than random chance. In GB, decision trees are the weak learners. The algorithm repeatedly looks for the weakest learners and boosts them to increase their importance by combining them with other weak predictors. To do this, the algorithm implements a loss function to calculate the error. Once the error is determined, another tree is made to reduce the error and give optimal weights to the learners. The output of the new tree is passed into the the original sequence of trees to give us an updated output. In this case, each donor is passed through the optimal tree and given a classification of donor or not donor. Most of the time, the tree gives the correct classification.</p>
 
 </div>
 </div>
